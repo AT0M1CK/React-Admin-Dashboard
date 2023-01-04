@@ -12,23 +12,32 @@ import {
 const NavItem = (props) => {
   return (
     <Flex
-      mt={30}
+      mt={2}
       flexDir="column"
       w="100%"
       alignItems={props.navSize === "small" ? "center" : "flex-start"}
     >
       <Menu placement="right">
         <Link
-          backgroundColor={props.active && "#AEC8CA"}
-          p={3}
-          borderRadius={8}
-          _hover={{ textDecor: "none", backgroundColor: "#AEC8CA" }}
+          backgroundColor={props.active && "#afb6cc"}
+          p={2}
+          borderRadius={7}
+          _hover={{ textDecor: "none", backgroundColor: "#afb6cc" }}
           w={props.navSize === "large" && "100%"}
         >
-          <MenuButton>
+          <MenuButton w="100%">
             <Flex>
-              <Icon as={props.icon} />
-              <Text>{props.title}</Text>
+              <Icon
+                as={props.icon}
+                fontSize="xl"
+                color={props.active ? "#1345eb" : "gray.500"}
+              />
+              <Text
+                ml={5}
+                display={props.navSize === "small" ? "none" : "flex"}
+              >
+                {props.title}
+              </Text>
             </Flex>
           </MenuButton>
         </Link>

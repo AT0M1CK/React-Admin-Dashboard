@@ -6,15 +6,7 @@ import {
   IconButton,
   Text,
 } from "@chakra-ui/react";
-import {
-  FiMenu,
-  FiHome,
-  FiCalendar,
-  FiUser,
-  FiDollarSign,
-  FiBriefcase,
-  FiSettings,
-} from "react-icons/fi";
+import { FiMenu, FiHome, FiCalendar, FiUser } from "react-icons/fi";
 import React, { useState } from "react";
 import NavItem from "./NavItem";
 
@@ -48,12 +40,16 @@ const SideBar = () => {
             else setNavSize("small");
           }}
         />
+
+        <Flex p="5%" display={navSize === "small" ? "none" : "flex"}>
+          <Text fontSize="xl" as="b">
+            halycon
+          </Text>
+        </Flex>
+
         <NavItem navSize={navSize} icon={FiHome} title="Dashboard" />
-        <NavItem navSize={navSize} icon={FiCalendar} title="Calender" active />
-        <NavItem navSize={navSize} icon={FiUser} title="Users" />
-        <NavItem navSize={navSize} icon={FiDollarSign} title="Cash" />
-        <NavItem navSize={navSize} icon={FiBriefcase} title="Files" />
-        <NavItem navSize={navSize} icon={FiSettings} title="Settings" />
+        <NavItem navSize={navSize} icon={FiCalendar} title="Project" active />
+        <NavItem navSize={navSize} icon={FiUser} title="Vendors" />
       </Flex>
 
       <Flex
