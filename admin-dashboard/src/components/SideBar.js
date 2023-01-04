@@ -1,4 +1,12 @@
-import { Avatar, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import {
+  Avatar,
+  Divider,
+  Flex,
+  Heading,
+  IconButton,
+  Text,
+} from "@chakra-ui/react";
+import { FiMenu } from "react-icons/fi";
 import React from "react";
 
 const SideBar = () => {
@@ -13,7 +21,15 @@ const SideBar = () => {
       flexDir="column"
       justifyContent="space-between"
     >
-      <Flex></Flex>
+      <Flex p="5%" flexDir="column" alignItems="flex-start" as="nav">
+        <IconButton
+          background="none"
+          mt={5}
+          _hover={{ background: "none" }}
+          icon={<FiMenu />}
+          onClick={() => {}}
+        />
+      </Flex>
 
       <Flex p="5%" flexDir="column" w="100%" alignItems="flex-start" mb={4}>
         <Divider />
