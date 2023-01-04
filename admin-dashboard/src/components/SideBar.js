@@ -6,8 +6,17 @@ import {
   IconButton,
   Text,
 } from "@chakra-ui/react";
-import { FiMenu } from "react-icons/fi";
+import {
+  FiMenu,
+  FiHome,
+  FiCalendar,
+  FiUser,
+  FiDollarSign,
+  FiBriefcase,
+  FiSettings,
+} from "react-icons/fi";
 import React, { useState } from "react";
+import NavItem from "./NavItem";
 
 const SideBar = () => {
   const [navSize, setNavSize] = useState("large");
@@ -39,6 +48,12 @@ const SideBar = () => {
             else setNavSize("small");
           }}
         />
+        <NavItem navSize={navSize} icon={FiHome} title="Dashboard" />
+        <NavItem navSize={navSize} icon={FiCalendar} title="Calender" active />
+        <NavItem navSize={navSize} icon={FiUser} title="Users" />
+        <NavItem navSize={navSize} icon={FiDollarSign} title="Cash" />
+        <NavItem navSize={navSize} icon={FiBriefcase} title="Files" />
+        <NavItem navSize={navSize} icon={FiSettings} title="Settings" />
       </Flex>
 
       <Flex
